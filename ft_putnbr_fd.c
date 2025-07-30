@@ -1,13 +1,25 @@
-void ft_putnbr_fd(int n, int fd)
-{
-    char       *str;
-    int         i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pepinhei <pepinhei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/30 09:16:59 by pepinhei          #+#    #+#             */
+/*   Updated: 2025/07/30 10:21:29 by pepinhei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    i = 0;
-    str = itoa(n);
-    while (str[i] != '\0')
-    {
-        write(fd,&str[i], 1);
-        i++;
-    }
+void	ft_putnbr_fd(int n, int fd)
+{
+	char		*str;
+	int			i;
+
+	i = 0;
+	str = itoa(n);
+	while (str[i] != '\0')
+	{
+		write(fd, &str[i], 1);
+		i++;
+	}
 }
