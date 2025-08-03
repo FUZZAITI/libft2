@@ -31,7 +31,10 @@ ft_putstr_fd.c\
 ft_strncmp.c\
 ft_atoi.c\
 ft_strmapi.c\
-ft_striteri.c
+ft_striteri.c\
+ft_strjoin.c\
+ft_putnbr_fd.c\
+ft_substr.c
 
 
 OUTPUTS := $(FILES:.c=.o)
