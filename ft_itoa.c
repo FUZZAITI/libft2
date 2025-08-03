@@ -14,7 +14,7 @@
 
 static int	count(int n);
 
-char	*itoa(int n)
+char	*ft_itoa(int n)
 {
 	int			neg;
 	int			len;
@@ -23,6 +23,8 @@ char	*itoa(int n)
 
 	num = n;
 	neg = 0;
+	if (num == 0)
+		return (ft_strdup("0"));
 	if (num < 0)
 	{
 		neg = 1;
@@ -31,8 +33,6 @@ char	*itoa(int n)
 	len = count(num) + neg;
 	ptr = malloc(len + 1);
 	ptr[len] = '\0';
-	if (num == 0)
-		return (ft_strdup("0"));
 	while (num > 0)
 	{
 		ptr[--len] = (num % 10) + '0';

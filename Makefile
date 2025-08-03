@@ -29,7 +29,9 @@ ft_isascii.c\
 ft_memcpy.c\
 ft_putstr_fd.c\
 ft_strncmp.c\
-ft_atoi.c
+ft_atoi.c\
+ft_strmapi.c\
+ft_striteri.c
 
 
 OUTPUTS := $(FILES:.c=.o)
