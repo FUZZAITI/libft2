@@ -2,30 +2,27 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t		i;
-	char		*result;
-	size_t		j;
+	size_t	i;
+	size_t	j;
+	char	*result;
 
-	i = 0;
-	j = 0;
 	if (!s1 || !s2)
-		return (0);
-	i = ft_strlen(s1) + ft_strlen(s2) + 1;
-	result = malloc(i);
+		return (NULL);
+	result = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!result)
-		return (0);
+		return (NULL);
 	i = 0;
-	while (s1[i] != '\0')
+	while (s1[i])
 	{
 		result[i] = s1[i];
 		i++;
 	}
-	while (s2[j] != '\0')
+	j = 0;
+	while (s2[j])
 	{
-		result[i] = s2[j];
-		i++;
+		result[i + j] = s2[j];
 		j++;
 	}
-	result[i] = '\0';
+	result[i + j] = '\0';
 	return (result);
 }
