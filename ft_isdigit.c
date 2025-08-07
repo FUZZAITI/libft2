@@ -18,3 +18,17 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
+
+/*#include <stdio.h>
+#include <ctype.h>
+
+int	main(void)
+{
+	printf("0: %d | %d\n", ft_isdigit('0'), isdigit('0'));  
+	printf("5: %d | %d\n", ft_isdigit('5'), isdigit('5'));  
+	printf("9: %d | %d\n", ft_isdigit('9'), isdigit('9'));  
+	printf("a: %d | %d\n", ft_isdigit('a'), isdigit('a'));  
+	printf(" : %d | %d\n", ft_isdigit(' '), isdigit(' ')); 
+	return (0);
+}
+*/

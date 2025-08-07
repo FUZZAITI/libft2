@@ -26,3 +26,21 @@ void	ft_bzero(void *s, size_t n)
 		n--;
 	}
 }
+
+/*
+#include <stdio.h>
+#include <string.h> 
+
+int main(void)
+{
+	char str1[10] = "123456789";
+	char str2[10] = "123456789";
+
+	ft_bzero(str1, 5);
+	bzero(str2, 5);
+
+	printf("ft_bzero: \"%s\"\n", str1);  
+	printf("   bzero: \"%s\"\n", str2);  
+	return 0;
+}
+*/

@@ -18,3 +18,17 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
+
+/*#include <stdio.h>
+#include <ctype.h>
+
+int	main(void)
+{
+	printf("'A': %d | %d\n", ft_isprint('A'), isprint('A'));    
+	printf("'~': %d | %d\n", ft_isprint('~'), isprint('~'));   
+	printf("' ': %d | %d\n", ft_isprint(' '), isprint(' '));   
+	printf("'\\n': %d | %d\n", ft_isprint('\n'), isprint('\n'));
+	printf("127: %d | %d\n", ft_isprint(127), isprint(127));  
+	return (0);
+}
+*/

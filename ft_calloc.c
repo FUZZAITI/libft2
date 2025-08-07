@@ -26,3 +26,25 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(s, tam);
 	return (s);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	int	*arr;
+	size_t	n = 5;
+
+	arr = ft_calloc(n, sizeof(int));
+	if (!arr)
+	{
+		printf("Erro ao alocar memória\n");
+		return (1);
+	}
+	for (size_t i = 0; i < n; i++)
+		printf("%d ", arr[i]);  
+	printf("\n");
+	free(arr);
+	return (0);
+}
+*/

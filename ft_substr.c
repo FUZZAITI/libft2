@@ -8,6 +8,8 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
   size_t  tam;
   size_t count;
   
+  if (!s)
+		return (0);
   i = 0;
   tam = ft_strlen(s);
   count = len;
@@ -24,8 +26,6 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     start++;
     count--;
   }
-  
   result[i] = '\0';
-  return (result);
-  
+  return (result); 
 }

@@ -19,3 +19,19 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
+
+/*
+#include <stdio.h>
+
+
+
+int main(void)
+{
+	printf("A: %d\n", ft_isalnum('A'));  
+	printf("z: %d\n", ft_isalnum('z'));  
+	printf("5: %d\n", ft_isalnum('5'));  
+	printf("!: %d\n", ft_isalnum('!'));  
+	printf(" : %d\n", ft_isalnum(' '));  
+	return 0;
+}
+*/
