@@ -1,10 +1,19 @@
-
 #include "libft.h"
 
-size_t  count_words(char *s, char c)
+static void free_all(char **array, size_t i)
 {
-	size_t	i;
-	size_t	count;
+	while (i > 0)
+	{
+		i--;
+		free(array[i]);
+	}
+	free (array);
+}
+
+static size_t	count_words(const char *s, char c)
+{
+	size_t i;
+	size_t count;
 
 	i = 0;
 	count = 0;
@@ -14,89 +23,82 @@ size_t  count_words(char *s, char c)
 			i++;
 		if (s[i])
 			count++;
-		while (s[i] != c && s[i])
+		while (s[i] && s[i] != c)
 			i++;
 	}
 	return (count);
 }
 
-int	build_word(char **array, size_t count, size_t len)
+static void build(char **array, const char *s, char c)
 {
-	array[count] = malloc(len);
-	if (!array[count])
-		return (0);
-	array[count][len - 1] = '\0';
-	return (1);
+	size_t count;
+	size_t len;
+	const char *start;
+
+	count = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		if (*s)
+			{
+				start = s;
+				len = 0;
+				while (*s && *s != c)
+				{
+					s++;
+					len++;
+				}
+				ft_strlcpy(array[count], start, len + 1);
+				count++;
+			}
+	}
 }
 
-int	fill_array(char **array, char *s, char c)
+static int size_words(char **array, const char *s, char c)
 {
-	size_t	i;
-	size_t	count;
-	size_t	len;
+	size_t i;
+	size_t size;
+	size_t len;
 
 	i = 0;
-	count = 0;
+	size = 0;
 	while (s[i])
 	{
-		len = 0;
 		while (s[i] == c)
 			i++;
-		if (s[i])
-			count++;
-		while (s[i] != c && s[i])
-		{
-			i++;
+		len = 0;
+		while (s[i + len] && s[i + len] != c)
 			len++;
-		}
 		if (len > 0)
 		{
-			if (!build_word(array, count - 1, len + 1))
+			array[size] = malloc(len + 1);
+			if (!array[size])
 				return (0);
+			size++;
+			i += len;
 		}
 	}
-	array[count] = NULL;
 	return (1);
 }
 
-void	fill_words(char **array, char *s, char c)
+char **ft_split(const char *s, char c)
 {
-	size_t	i;
-	size_t	count;
-	size_t	len;
-
-	i = 0;
-	count = 0;
-	while (s[i])
-	{
-		len = 0;
-		while (s[i] == c)
-			i++;
-		if (s[i])
-			count++;
-		while (s[i] != c && s[i])
-		{
-			array[count - 1][len] = s[i];
-			i++;
-			len++;
-		}
-	}
-}
-
-char	**ft_split(char *s, char c)
-{
-	char	**array;
+	char **array;
+	size_t size;
 
 	if (!s)
 		return (NULL);
-	array = malloc((count_words(s, c) + 1) * sizeof(char *));
+	size = count_words(s, c);
+	array = malloc((size + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);
-	if (!fill_array(array, s, c))
+	array[size] = NULL;
+	if (!size_words(array, s, c))
 	{
-		free(array);
+		free_all(array, size);
 		return (NULL);
 	}
-	fill_words(array, s, c);
+	build(array, s, c);
 	return (array);
 }
