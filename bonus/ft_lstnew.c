@@ -6,8 +6,8 @@ t_list	*ft_lstnew(void *content)
 
 	node = malloc(sizeof(t_list));
 	if (!node)
-		return (NULL);
+		return (0);
 	node->content = content;
-	node->next = NULL;
+	node->next = (0);
 	return (node);
 }
