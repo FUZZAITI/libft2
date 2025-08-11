@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pepinhei <pepinhei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/11 12:01:38 by pepinhei          #+#    #+#             */
+/*   Updated: 2025/08/11 12:04:11 by pepinhei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static void free_all(char **array, size_t i)
+static	void	free_all(char **array, size_t i)
 {
 	while (i > 0)
 	{
@@ -12,8 +24,8 @@ static void free_all(char **array, size_t i)
 
 static size_t	count_words(const char *s, char c)
 {
-	size_t i;
-	size_t count;
+	size_t		i;
+	size_t		count;
 
 	i = 0;
 	count = 0;
@@ -29,11 +41,11 @@ static size_t	count_words(const char *s, char c)
 	return (count);
 }
 
-static void build(char **array, const char *s, char c)
+static void	build(char **array, const char *s, char c)
 {
-	size_t count;
-	size_t len;
-	const char *start;
+	size_t					count;
+	size_t					len;
+	const char				*start;
 
 	count = 0;
 	while (*s)
@@ -41,25 +53,25 @@ static void build(char **array, const char *s, char c)
 		while (*s && *s == c)
 			s++;
 		if (*s)
+		{
+			start = s;
+			len = 0;
+			while (*s && *s != c)
 			{
-				start = s;
-				len = 0;
-				while (*s && *s != c)
-				{
 					s++;
 					len++;
-				}
-				ft_strlcpy(array[count], start, len + 1);
-				count++;
 			}
+			ft_strlcpy(array[count], start, len + 1);
+				count++;
+		}
 	}
 }
 
-static int size_words(char **array, const char *s, char c)
+static	int	size_words(char **array, const char *s, char c)
 {
-	size_t i;
-	size_t size;
-	size_t len;
+	size_t		i;
+	size_t		size;
+	size_t		len;
 
 	i = 0;
 	size = 0;
@@ -82,10 +94,10 @@ static int size_words(char **array, const char *s, char c)
 	return (1);
 }
 
-char **ft_split(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
-	char **array;
-	size_t size;
+	char		**array;
+	size_t		size;
 
 	if (!s)
 		return (NULL);
