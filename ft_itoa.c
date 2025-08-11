@@ -6,13 +6,14 @@
 /*   By: pepinhei <pepinhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 09:15:57 by pepinhei          #+#    #+#             */
-/*   Updated: 2025/08/11 13:56:18 by pepinhei         ###   ########.fr       */
+/*   Updated: 2025/08/11 16:08:09 by pepinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static int	count(long int n);
+static	void	build(int num, char *ptr, int len);
 
 char	*ft_itoa(int n)
 {
@@ -32,12 +33,10 @@ char	*ft_itoa(int n)
 	}
 	len = count(num) + neg;
 	ptr = malloc(len + 1);
+	if (!ptr)
+		return (0);
 	ptr[len] = '\0';
-	while (num > 0)
-	{
-		ptr[--len] = (num % 10) + '0';
-		num = num / 10;
-	}
+	build(num, ptr, len);
 	if (neg)
 		ptr[0] = '-';
 	return (ptr);
@@ -56,4 +55,13 @@ static int	count(long int n)
 		i++;
 	}
 	return (i);
+}
+
+static	void	build(int num, char *ptr, int len)
+{
+	while (num > 0)
+	{
+		ptr[--len] = (num % 10) + '0';
+		num = num / 10;
+	}
 }
