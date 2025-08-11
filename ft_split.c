@@ -6,11 +6,17 @@
 /*   By: pepinhei <pepinhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 12:01:38 by pepinhei          #+#    #+#             */
-/*   Updated: 2025/08/11 12:04:11 by pepinhei         ###   ########.fr       */
+/*   Updated: 2025/08/11 14:38:05 by pepinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void		free_all(char **array, size_t i);
+static size_t	count_words(const char *s, char c);
+static void		build(char **array, const char *s, char c);
+static int		size_words(char **array, const char *s, char c);
+char			**ft_split(const char *s, char c);
 
 static	void	free_all(char **array, size_t i)
 {

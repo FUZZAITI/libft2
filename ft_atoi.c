@@ -6,7 +6,7 @@
 /*   By: pepinhei <pepinhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 09:15:03 by pepinhei          #+#    #+#             */
-/*   Updated: 2025/07/30 10:01:56 by pepinhei         ###   ########.fr       */
+/*   Updated: 2025/08/11 13:31:38 by pepinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,3 @@ int	ft_atoi(const char *str)
 	}
 	return (num * neg);
 }
-
-/*
-#include <stdio.h>
-
-int ft_atoi(const char *str); 
-
-int main(void)
-{
-	printf("%d\n", ft_atoi("   -123")); // -123
-	printf("%d\n", ft_atoi("42"));      // 42
-	printf("%d\n", ft_atoi("+7"));      // 7
-	printf("%d\n", ft_atoi("   0042")); // 42
-	return 0;
-}
-*/

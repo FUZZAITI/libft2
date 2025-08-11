@@ -6,13 +6,13 @@
 /*   By: pepinhei <pepinhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 09:15:57 by pepinhei          #+#    #+#             */
-/*   Updated: 2025/07/30 11:08:52 by pepinhei         ###   ########.fr       */
+/*   Updated: 2025/08/11 13:56:18 by pepinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count(int n);
+static int	count(long int n);
 
 char	*ft_itoa(int n)
 {
@@ -43,7 +43,7 @@ char	*ft_itoa(int n)
 	return (ptr);
 }
 
-static int	count(int n)
+static int	count(long int n)
 {
 	int		i;
 
