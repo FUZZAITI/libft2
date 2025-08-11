@@ -1,3 +1,5 @@
+#include "libft.h"
+
 char    *ft_strtrim(char const *s1, char const *set)
 {
   size_t  start;
@@ -21,7 +23,7 @@ char    *ft_strtrim(char const *s1, char const *set)
   return (resul);
 }
 
-int    in_set(char c, const char *set)
+static int    in_set(char c, const char *set)
 {
   while(*set)
   {
