@@ -6,7 +6,7 @@
 /*   By: pepinhei <pepinhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 09:16:42 by pepinhei          #+#    #+#             */
-/*   Updated: 2025/07/30 10:03:04 by pepinhei         ###   ########.fr       */
+/*   Updated: 2025/08/11 13:27:10 by pepinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned const char		*src2;
 	size_t					i;
 
+	if (dst == src || len == 0)
+		return (dst);
 	dst2 = (unsigned char *)dst;
 	src2 = (unsigned const char *)src;
 	i = 0;
-	if (!dst || !src)
-		return (0);
-	if (dst == src || len == 0)
-		return (dst);
 	if (dst2 < src2)
 		return (ft_memcpy(dst, src, len));
 	else

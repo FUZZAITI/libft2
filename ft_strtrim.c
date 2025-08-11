@@ -6,11 +6,13 @@
 /*   By: pepinhei <pepinhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 12:06:47 by pepinhei          #+#    #+#             */
-/*   Updated: 2025/08/11 12:09:17 by pepinhei         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:21:42 by pepinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static	int	in_set(char c, const char *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
