@@ -13,7 +13,7 @@
 #include "libft.h"
 
 static int	count(long int n);
-static	void	build(int num, char *ptr, int len);
+static	void	build(long int num, char *ptr, int len);
 
 char	*ft_itoa(int n)
 {
@@ -57,7 +57,7 @@ static int	count(long int n)
 	return (i);
 }
 
-static	void	build(int num, char *ptr, int len)
+static	void	build(long int num, char *ptr, int len)
 {
 	while (num > 0)
 	{

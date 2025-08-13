@@ -64,11 +64,11 @@ static void	build(char **array, const char *s, char c)
 			len = 0;
 			while (*s && *s != c)
 			{
-					s++;
-					len++;
+				s++;
+				len++;
 			}
 			ft_strlcpy(array[count], start, len + 1);
-				count++;
+			count++;
 		}
 	}
 }
