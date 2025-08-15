@@ -6,7 +6,7 @@
 /*   By: pepinhei <pepinhei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 12:01:38 by pepinhei          #+#    #+#             */
-/*   Updated: 2025/08/11 14:38:05 by pepinhei         ###   ########.fr       */
+/*   Updated: 2025/08/15 10:51:45 by pepinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,20 @@ static	void	free_all(char **array, size_t i)
 	free (array);
 }
 
-static size_t	count_words(const char *s, char c)
+static size_t	count_words(const char *str, char separator)
 {
 	size_t		i;
 	size_t		count;
 
 	i = 0;
 	count = 0;
-	while (s[i])
+	while (str[i])
 	{
-		while (s[i] == c)
+		while (str[i] == separator)
 			i++;
-		if (s[i])
+		if (str[i])
 			count++;
-		while (s[i] && s[i] != c)
+		while (str[i] && str[i] != separator)
 			i++;
 	}
 	return (count);

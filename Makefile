@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pepinhei <pepinhei@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/08/15 11:21:33 by pepinhei          #+#    #+#              #
+#    Updated: 2025/08/15 11:21:34 by pepinhei         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a 
 
 CC = cc 
@@ -29,7 +41,6 @@ ft_isascii.c\
 ft_memcpy.c\
 ft_putstr_fd.c\
 ft_strncmp.c\
-ft_atoi.c\
 ft_strmapi.c\
 ft_striteri.c\
 ft_strjoin.c\
